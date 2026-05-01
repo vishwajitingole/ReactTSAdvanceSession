@@ -2,7 +2,10 @@ import Navbar from "./Components/Navbar"
 
 function Home() {
   return (
-    <div><Navbar/></div>
+    <div>
+        <div className=""><Navbar/></div>
+        Sudhanshu
+    </div>
   )
 }
 

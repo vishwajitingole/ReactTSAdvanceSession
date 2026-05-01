@@ -4,7 +4,7 @@ function Home() {
   return (
     <div>
         <div className=""><Navbar/></div>
-        Sudhanshu.    
+        Sudhanshu Koli   
     </div>
   )
 }

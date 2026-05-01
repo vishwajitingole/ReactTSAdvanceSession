@@ -1,10 +1,15 @@
-import Navbar from "./Components/Navbar"
+import Todo from "./Components/Todo"
 
 function Home() {
   return (
-    <div>
-        <div className=""><Navbar/></div>
-        Sudhanshu Koli   
+    <div className="flex h-screen justify-centery item-center">
+        {/* <div className=""><Navbar/></div> */}
+        Sudhanshu Koli 
+
+        <div>
+          {/* <Counter /> */}
+          <Todo />
+        </div>
     </div>
   )
 }

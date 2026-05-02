@@ -1,16 +1,12 @@
-import Todo from "./Components/Todo"
+import Ecommerce from "./Components/Ecommerce"
 
 function Home() {
   return (
-    <div className="flex h-screen justify-centery item-center">
-        {/* <div className=""><Navbar/></div> */}
-        Sudhanshu Koli 
-
         <div>
           {/* <Counter /> */}
-          <Todo />
+          {/* <Todo /> */}
+          <Ecommerce />
         </div>
-    </div>
   )
 }
 

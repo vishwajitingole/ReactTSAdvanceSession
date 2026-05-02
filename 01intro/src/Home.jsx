@@ -1,12 +1,13 @@
-import Navbar from "./Components/Navbar"
-import Todo from "./Components/Todo"
+import Ecommerce from "./Ecommerce"
 
 function Home() {
   return (
-    <div>
-        <div className=""><Navbar/></div>
+    <div className="">
+        {/* <div className=""><Navbar/></div> */}
         {/* Ankush Sharma */}
-        <Todo />
+        {/* <Todo /> */}
+        <Ecommerce />
+
     </div>
   )
 }

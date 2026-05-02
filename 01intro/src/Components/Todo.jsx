@@ -2,10 +2,11 @@ import React from "react";
 
 function Todo() {
     const[todo,setTodo]=React.useState([]);
-    const [input,setInput]=React.useState("Enter your value");
+    const [input,setInput]=React.useState("Enter your Todo");
 
     function handleClick (){
         setTodo([...todo, input]);
+        setInput("");
     }
 
     function handleDelete (val){
@@ -25,8 +26,8 @@ function Todo() {
 
         {
         todo.map((e,i)=> <div key={i}>
-            <div className="name">{e}</div>
-                <button onClick={ () => handleDelete(i) } className="w-full h-10 px-1 py-2 bg-red-400 rounded-sm">Delete</button>
+                <div className="name"><li>{e}</li></div>
+                <button onClick={ () => handleDelete(i) } className="w-full h-10 px-1 py-2 bg-red-800 rounded-sm">Delete</button>
             </div>)}
       
 

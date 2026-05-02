@@ -4,6 +4,7 @@ import NotFound from "./Components/NotFound";
 import Todo from "./Components/Todo";
 import Ecommerce from "./Ecommerce";
 import MenuOptions from "./MenuOptions";
+import ProductPage from "./ProductPage";
 import SplitScreen from "./Screen/SplitScreen";
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
          <Route index element={<Counter />} />
          <Route path="/todo" element={<Todo />} />
          <Route path="/ecommerce" element={<Ecommerce />} />
+         <Route path="/product/:id" element={<ProductPage/>}/>
          <Route path="*" element={<NotFound/>}/>
 
          

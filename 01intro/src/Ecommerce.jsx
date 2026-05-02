@@ -7,15 +7,16 @@ import ProductCard from "./ProductCard";
 function Ecommerce() {
     const [product,setProduct]=React.useState([]);
     const [addedProduct,setAddedProduct]=React.useState([])
-    async function handleClick(){
-       const res=  await axios.get("https://fakestoreapi.com/products");
-       setProduct([...res.data])
-    };
+
     function handleAdd(num){
        let result= product.filter((e,i)=>i==num);
        setAddedProduct([...addedProduct,result]);
     }
     React.useEffect(()=>{
+        async function handleClick(){
+       const res=  await axios.get("https://fakestoreapi.com/products");
+       setProduct([...res.data])
+    };
         handleClick();
     },[]);
 

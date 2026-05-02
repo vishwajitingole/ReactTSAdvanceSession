@@ -16,6 +16,7 @@ function MenuOptions() {
         <NavLink to="/">Counter</NavLink>
         <NavLink to="/todo">Todo</NavLink>
         <NavLink to="/ecommerce">Ecommerce</NavLink>
+       
         <button onClick={handleClick}>Kahi toh</button>
       </div>
     </div>

@@ -7,7 +7,7 @@ function SplitScreen({ Left, Right }) {
             <Left />
         </div>
 
-        <div className="w-full bg-red-50">
+        <div className="w-full bg-brown-400">
             <Right />
         </div>
   

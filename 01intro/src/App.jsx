@@ -1,9 +1,26 @@
-import Home from "./Home";
+import { Route, Routes } from "react-router";
+import Counter from "./Components/Counter";
+import NotFound from "./Components/NotFound";
+import Todo from "./Components/Todo";
+import Ecommerce from "./Ecommerce";
 import MenuOptions from "./MenuOptions";
 import SplitScreen from "./Screen/SplitScreen";
 
 export default function App() {
   return (
-    <div><SplitScreen Left={MenuOptions} Right={Home}/></div>
+    <div>
+      <Routes>
+        <Route path="/" element={<SplitScreen Left={MenuOptions} />}>
+         <Route index element={<Counter />} />
+         <Route path="/todo" element={<Todo />} />
+         <Route path="/ecommerce" element={<Ecommerce />} />
+         <Route path="*" element={<NotFound/>}/>
+
+         
+        </Route>
+      </Routes>
+      
+    
+      </div>
   )
 }

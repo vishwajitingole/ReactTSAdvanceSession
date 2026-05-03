@@ -16,7 +16,7 @@ function Todo() {
 
 
   return (
-    <div className=" flex flex-col gap-5 items-center justify-center w-[60vw] h-[70vh] rounded-xl bg-stone-200">
+    <div className=" flex flex-col gap-5 items-center justify-center h-[70vh] rounded-xl bg-stone-200">
 
         <div className="">  
             <input value={input} onChange={(e)=>setInput(e.target.value)} className=" bg-white rounded-lg w-50 px-2 py-2 border border-2 " type="text" /></div>

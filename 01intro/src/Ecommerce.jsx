@@ -2,12 +2,15 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { useNavigate } from "react-router";
 import ProductCard from "./ProductCard";
 
 function Ecommerce(){
     const [product, setProduct] = React.useState([]);
     const [addedProduct,setAddedProduct]=React.useState([]);
     const [search, setSearch]=React.useState("");
+
+    const navigate = useNavigate();
     
     //best practice to keep the fetch function inside the useEffect hook
     // or else you will have to memozie the function in order to prevent the unecessary rerenders
@@ -36,14 +39,14 @@ function Ecommerce(){
         item.title.toLowerCase().includes(search.toLowerCase())
         );
         
-        console.log("filteredProducts");
-        console.log(filteredProducts);
+        // console.log("filteredProducts");
+        // console.log(filteredProducts);
 
     return(
 
-        <div>
+    <div>
         <div className="flex  justify-between p-10 pt-10">
-            <motion.div  initial={{opacity:0,x:100}} animate={{ opacity: 1,x:0}} className="">Ecommerce</motion.div>
+            <motion.div  initial={{opacity:0,x:100}} animate={{ opacity: 1,x:0}} className="text-lg font-bold">Ecommerce By Ankush</motion.div>
             {/* search functionality */}
             <input
                 type="text"
@@ -54,22 +57,21 @@ function Ecommerce(){
             />
 
 
-            <div className="relative"><FaShoppingCart size={30} />
-            <div className="absolute top-4 left-8">{addedProduct.length}</div>
+            <div className="relative">
+                <FaShoppingCart size={30} onClick={() => navigate("/cart")} />
+                <div className="absolute top-4 left-8">{addedProduct.length}</div>
             </div>
             
-            </div>
+        </div>
 
 
 
         <div className="flex  flex-wrap gap-10 justify-center">
-            {filteredProducts.length>0?<>
+            {filteredProducts.length > 0 ? 
             
-            {filteredProducts.map((e,i)=><ProductCard handleAdd={handleAdd} key={i} index={i} product={e}/>)}
-            
-            
-            
-            </>:<motion.div initial={{y:-100}} animate={{y:0}} className="text-center">No Products</motion.div>}
+            <>
+                {filteredProducts.map((e,i)=><ProductCard handleAdd={handleAdd} key={i} index={i} product={e}/>)}
+            </> : <motion.div initial={{y:-100}} animate={{y:0}} className="text-center">No Products</motion.div>}
 
         </div>
 

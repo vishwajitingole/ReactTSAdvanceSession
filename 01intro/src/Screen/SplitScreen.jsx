@@ -1,14 +1,16 @@
-function SplitScreen({ Left, Right }) {
+import { Outlet } from "react-router"
+
+function SplitScreen({ Left }) {
   return (
 
-    <div className="w-full h-screen flex">
+    <div className="w-full flex">
         
-        <div className="w-1/8 bg-red-300">      
+        <div className="w-1/8 bg-gray-300">      
             <Left />
         </div>
 
-        <div className="w-full bg-red-50">
-            <Right />
+        <div className="w-full bg-brown-400">
+            <Outlet />
         </div>
   
     </div>

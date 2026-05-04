@@ -4,16 +4,16 @@ import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import ProductCard from "./ProductCard";
+import useCart from "./store/useCart";
 
 function Ecommerce(){
     const [product, setProduct] = React.useState([]);
-    const [addedProduct,setAddedProduct]=React.useState([]);
+    //const [addedProduct,setAddedProduct]=React.useState([]);
     const [search, setSearch]=React.useState("");
 
     const navigate = useNavigate();
-    
-    //best practice to keep the fetch function inside the useEffect hook
-    // or else you will have to memozie the function in order to prevent the unecessary rerenders
+    const addToCart = useCart((state)=> state.addToCart);
+    const cartTotal = useCart((state)=> state.prod.length)
 
     React.useEffect( () =>{
 
@@ -27,20 +27,18 @@ function Ecommerce(){
 
     function handleAdd(num){
          const selectedProduct = product[num];
-         setAddedProduct(prev => [...prev, selectedProduct]);
-        //let result= product.filter((e,i)=>i==num);
-        //setAddedProduct([...addedProduct,result]);
-    }
+         //setAddedProduct(prev => [...prev, selectedProduct]);
+        //global store me bhi add kr diya (zustand)
+        addToCart(selectedProduct);
 
-    //console.log(product);
-    //console.log(addedProduct);
+    }
 
     const filteredProducts = product.filter((item) =>
         item.title.toLowerCase().includes(search.toLowerCase())
         );
         
-        // console.log("filteredProducts");
-        // console.log(filteredProducts);
+        // console.log("cart total");
+        // console.log(cartTotal);
 
     return(
 
@@ -59,7 +57,7 @@ function Ecommerce(){
 
             <div className="relative">
                 <FaShoppingCart size={30} onClick={() => navigate("/cart")} />
-                <div className="absolute top-4 left-8">{addedProduct.length}</div>
+                <div className="absolute top-4 left-8">{cartTotal}</div>
             </div>
             
         </div>

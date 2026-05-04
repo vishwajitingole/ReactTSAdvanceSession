@@ -3,31 +3,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { motion } from "motion/react";
 import React from "react";
-import Cart from "./Cart";
+import { useNavigate } from "react-router";
+import { CartContext } from "../Context/CartContext";
 import Products from "./Products";
 
 export default function Ecommerce(){
 
-    const[itemCount, setItemCount] = React.useState([]);
-    const[productsList, setProductsList] = React.useState([]);
+    const navigate = useNavigate();
+    const {productsList, setProductsList, addToCart, cartProductCount} = React.useContext(CartContext);
+  
     const[searchItem, setSearchItem] = React.useState('')
 
-    function addToCart(theId){
-        const result = productsList.filter((e)=> e.id === theId)
-        setItemCount([...itemCount, result]);
-    }
-
-    function toDelete(removeId){
-        
-        const result = itemCount.filter((e)=>{
-            e[0].id !== removeId
-            console.log("The removeId - " + removeId + "and eid - " + e[0].id);
-            return e[0].id !== removeId;
-        });
-        setItemCount(result);
-        
-    }
-    console.log("the delete is - " + itemCount);
+    const theCartCount = cartProductCount.reduce(
+                (sum, e) => sum + e.productCount, 0
+            );
 
     React.useEffect(()=>{
         async function getItems(){
@@ -37,7 +26,7 @@ export default function Ecommerce(){
     }
 
     getItems();
-    },[]);
+    },[setProductsList]);
 
     const searchProduct = productsList.filter((product)=>{
         
@@ -55,10 +44,10 @@ export default function Ecommerce(){
                 onChange={(e) => setSearchItem(e.target.value)} />
             </div>
             
-            <div className="flex">
+            <motion.div onClick={()=>{navigate("/cart")}} className="flex cursor-pointer" whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.1 }}>
                 <FontAwesomeIcon className="text-4xl" icon={faCartShopping} />
-                <div className="text-2xl">{itemCount.length}</div>
-            </div>
+                <div className="text-2xl">{theCartCount}</div>
+            </motion.div>
         </div>
 
         <div className="flex gap-5 flex-wrap mx-4">
@@ -66,18 +55,6 @@ export default function Ecommerce(){
             (searchProduct.map((e,i)=>(
                     <motion.div initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }} > 
                         <Products key={i} product={e} addToCart={addToCart} />
-                    </motion.div>
-            ))
-            )}
-        </div>
-
-        <h1 className="text-6xl font-bold my-20 text-center">CART -</h1>
-        
-        <div className="flex gap-5 flex-wrap mx-4">
-            {itemCount.length === 0 ? (<p>NO items in cart</p>) :
-            (itemCount.map((e,i)=>(
-                    <motion.div initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }} > 
-                        <Cart key={i} product={e[0]} toDelete={toDelete} />
                     </motion.div>
             ))
             )}

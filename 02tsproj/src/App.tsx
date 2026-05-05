@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router";
 import './App.css';
+import Form from "./Components/Form";
 import NotFound from "./Components/NotFound";
 import Home from "./Home";
 import MenuOptions from './MenuOptions';
@@ -14,8 +15,8 @@ function App() {
         <Route path="/" element={<SplitScreen Left={MenuOptions}/>}>
 
           <Route index element={<Home />} />
-          {/* <Route path="/todo" element={<Todo />} />
-          <Route path="/ecommerce" element={<Ecommerce />} />
+          <Route path="/form" element={<Form />} />
+          {/* <Route path="/ecommerce" element={<Ecommerce />} />
           <Route path="/cart" element={<Cart />} /> */}
           <Route path="*" element={<NotFound/>}/>
 

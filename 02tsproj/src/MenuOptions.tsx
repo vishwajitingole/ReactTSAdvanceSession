@@ -14,7 +14,7 @@ function MenuOptions() {
     <div>
       <div className="flex flex-col p-10">
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/todo">Todo</NavLink>
+        <NavLink to="/form">Form</NavLink>
         <NavLink to="/ecommerce">Ecommerce</NavLink>
         {/* <NavLink to="/cart">Cart</NavLink> */}
        

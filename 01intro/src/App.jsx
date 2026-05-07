@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router";
 import Cart from "./Components/Cart";
+import DisplayTable from "./Components/DisplayTable";
 import NotFound from "./Components/NotFound";
 import Todo from "./Components/Todo";
 import Ecommerce from "./Ecommerce";
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/todo" element={<Todo />} />
           <Route path="/ecommerce" element={<Ecommerce />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/displayTable" element={<DisplayTable />} />
           <Route path="*" element={<NotFound/>}/>
 
         </Route>

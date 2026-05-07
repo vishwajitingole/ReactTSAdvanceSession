@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router";
 import './App.css';
+import DisplayTable from "./Components/DisplayTable";
 import Form from "./Components/Form";
 import NotFound from "./Components/NotFound";
 import Home from "./Home";
@@ -16,8 +17,8 @@ function App() {
 
           <Route index element={<Home />} />
           <Route path="/form" element={<Form />} />
-          {/* <Route path="/ecommerce" element={<Ecommerce />} />
-          <Route path="/cart" element={<Cart />} /> */}
+          <Route path="/displayTable" element={<DisplayTable />} />
+          {/* <Route path="/cart" element={<Cart />} /> */}
           <Route path="*" element={<NotFound/>}/>
 
         </Route>

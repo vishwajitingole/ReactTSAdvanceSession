@@ -15,7 +15,7 @@ function MenuOptions() {
       <div className="flex flex-col p-10">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/form">Form</NavLink>
-        <NavLink to="/ecommerce">Ecommerce</NavLink>
+        <NavLink to="/displayTable">Diplay Table</NavLink>
         {/* <NavLink to="/cart">Cart</NavLink> */}
        
         <button onClick={handleClick} className="border rounded border-black bg-green-600 text-white"

@@ -1,3 +1,5 @@
+import { lazy, Suspense } from "react";
+const Profile = lazy( () => import("./Components/Profile"));
 
 function Home() {
   return (
@@ -23,29 +25,24 @@ function Home() {
         />
       </section>
 
-      {/* Features Section */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Profile component Section */}
+      <section className="flex flex-col justify-center items-center gap-6">
 
-        <div className="p-4 bg-gray-100 rounded-xl shadow">
-          <h2 className="text-xl font-semibold">📝 Todo Manager</h2>
-          <p className="text-gray-600 mt-2">
-            Add, delete, and track your daily tasks efficiently.
-          </p>
-        </div>
+          <h1 className="text-3xl font-bold">
+            React Suspense Example
+          </h1>
 
-        <div className="p-4 bg-gray-100 rounded-xl shadow">
-          <h2 className="text-xl font-semibold">🛒 E-commerce</h2>
-          <p className="text-gray-600 mt-2">
-            Browse products and simulate a real shopping experience.
-          </p>
-        </div>
+          <pre className="bg-gray-200 p-4 rounded">
+            {`
+              lazy()  -> component loads asynchronously
+              Suspense -> handles loading state
+              fallback -> temporary UI
+            `}
+          </pre>
 
-        <div className="p-4 bg-gray-100 rounded-xl shadow">
-          <h2 className="text-xl font-semibold">⚡ Fast & Modern</h2>
-          <p className="text-gray-600 mt-2">
-            Built using Vite, React, and TypeScript for top performance.
-          </p>
-        </div>
+          <Suspense fallback={<h2>Loading Profile...</h2>}>
+            <Profile />
+          </Suspense>
 
       </section>
 

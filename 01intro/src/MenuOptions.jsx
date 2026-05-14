@@ -17,6 +17,8 @@ function MenuOptions() {
         <NavLink to="/todo">Todo</NavLink>
         <NavLink to="/ecommerce">Ecommerce</NavLink>
         <NavLink to="/displayTable">DisplayTable</NavLink>
+        <NavLink to="/loginTest">LoginTest</NavLink>
+        <NavLink to="/form">Form</NavLink>
        
         <button onClick={handleClick} className="border rounded border-black bg-green-600 text-white"
           >No Page

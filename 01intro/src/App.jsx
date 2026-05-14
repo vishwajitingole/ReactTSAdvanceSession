@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router";
 import Cart from "./Components/Cart";
 import DisplayTable from "./Components/DisplayTable";
+import Form from "./Components/Form";
+import LoginTest from "./Components/loginTest";
 import NotFound from "./Components/NotFound";
 import Todo from "./Components/Todo";
 import Ecommerce from "./Ecommerce";
@@ -20,16 +22,14 @@ export default function App() {
           <Route path="/ecommerce" element={<Ecommerce />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/displayTable" element={<DisplayTable />} />
+          <Route path="/loginTest" element={<LoginTest />} />
+          <Route path="/form" element={<Form />} />
           <Route path="*" element={<NotFound/>}/>
 
         </Route>
 
 
       </Routes>
-    
-    
-    
-    
     
     </div>
   )

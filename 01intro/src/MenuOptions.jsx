@@ -1,13 +1,19 @@
 import { NavLink, useNavigate } from "react-router";
+import useAuth from "./store/useAuth";
 
 
 function MenuOptions() {
   const nav=useNavigate();
+  const setLogin = useAuth( (state) => state.setIsLoggedIn );
 
   function handleClick(){
-    // logout
+    // default page
     nav("/notfound");
  
+  }
+
+  function handleLogout(){
+    setLogin(false);
   }
 
   return (
@@ -22,6 +28,9 @@ function MenuOptions() {
        
         <button onClick={handleClick} className="border rounded border-black bg-green-600 text-white"
           >No Page
+        </button>
+        <button onClick={handleLogout} className="border rounded border-black bg-red-600 text-white mt-5"
+          >Log out
         </button>
         
       </div>

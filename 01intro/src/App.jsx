@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router";
 import Cart from "./Components/Cart";
 import DisplayTable from "./Components/DisplayTable";
@@ -8,23 +9,24 @@ import Todo from "./Components/Todo";
 import Ecommerce from "./Ecommerce";
 import Home from "./Home";
 import AuthPage from "./LoginModule/AuthPage";
+import RegisterPage from "./LoginModule/RegisterPage";
 import MenuOptions from "./MenuOptions";
 import SplitScreen from "./Screen/SplitScreen";
-import useAuth from "./store/useAuth";
 
 export default function App() {
 
-  const CheckLogin = useAuth( (state) => state.isLoggedIn );
-  //console.log(CheckLogin);
-
   return (
     <div>
+      <Toaster />
 
       <Routes>
-        <Route path="/" element={
-                    CheckLogin ? <SplitScreen Left={MenuOptions}/>
-                    : <AuthPage/>
-                    }>
+      
+        {/* Public Routes */}
+        <Route path="/login" element={<AuthPage />}/>
+        <Route path="/register" element={<RegisterPage />}/>
+
+        {/* Protected Routes */}
+        <Route path="/" element={<SplitScreen Left={MenuOptions}/>}>
 
           <Route index element={<Home />} />
           <Route path="/todo" element={<Todo />} />

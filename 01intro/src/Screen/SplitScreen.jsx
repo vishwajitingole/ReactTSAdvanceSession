@@ -1,6 +1,15 @@
-import { Outlet } from "react-router"
+import { Navigate, Outlet } from "react-router";
+import useAuth from "../store/useAuth";
 
 function SplitScreen({ Left }) {
+
+  const CheckLogin = useAuth( (state) => state.isLoggedIn );
+
+   // If not logged in redirect to login page
+  if (!CheckLogin) {
+    return <Navigate to="/login" replace />;
+  }
+
   return (
 
     <div className="w-full flex">
@@ -15,6 +24,8 @@ function SplitScreen({ Left }) {
   
     </div>
   )
+
+  
 }
 
 export default SplitScreen

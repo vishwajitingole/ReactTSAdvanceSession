@@ -1,4 +1,12 @@
 import { useState } from "react";
+import AutherImage from "./Images/AutherImage.png";
+import FrontCoverImage from "./Images/frontCoverPage.jpeg";
+
+//images for the section a look at the book
+import AboutBook1 from "./Images/AboutBook1.jpeg";
+import AboutBook2 from "./Images/AboutBook2.jpeg";
+import AboutBook3 from "./Images/AboutBook3.jpeg";
+
 
 /* ------------------------------------------------------------------
    EDIT THIS BLOCK: all the book content lives here.
@@ -6,70 +14,79 @@ import { useState } from "react";
 ------------------------------------------------------------------- */
 const BOOK = {
   title: "April",
-  subtitle: "Poems for the season of waiting",
-  tagline: "Forty poems about rain, distance and the people we write to.",
+  subtitle: "A Book of Poetry",
+  tagline: "Sixty one poems about love, longing, memory, trauma, and loss.",
   coverColor: "#1d2a4d", // used for the 3D cover if you don't have a cover image
-  coverImage: "", // e.g. "/images/cover-front.jpg" (leave empty to use the drawn cover)
+  coverImage: FrontCoverImage, // e.g. "/images/cover-front.jpg" (leave empty to use the drawn cover)
   backBlurb:
-    "Written over three monsoons, these poems follow one long letter that is never quite sent.",
+    "April is a poetry collection exploring love, longing, memory, trauma, and loss, while finding quiet beauty in patience and hope.",
   gallery: [
+    { src: AboutBook1, alt: "About Book 1" },
+    { src: AboutBook2, alt: "About Book 2" },
+    { src: AboutBook3, alt: "About Book 3" }
     // Add your own photos: { src: "/images/p1.jpg", alt: "Cover of the book" }
     // Leave empty to show placeholder frames.
   ],
-  amazonUrl: "https://www.amazon.in/your-book-link",
+  amazonUrl: "https://store.bookleafpub.com/products/9789376666621",
   facebookUrl: "https://www.facebook.com/your-page-or-shop",
-  price: "₹299",
-  facts: ["Paperback", "112 pages", "40 poems", "English"],
+  price: "₹350",
+  facts: ["Paperback", "225 pages", "61 poems", "English"],
   about: [
-    "Monsoon Letters begins on the first day of rain and ends on the last. In between are poems about waiting at railway platforms, kitchens that smell of wet earth, and the small, stubborn habit of writing to someone who may never answer.",
-    "The poems are short and plain-spoken. You can read one in a minute, then carry it around for the rest of the day.",
+    "April is a poetry collection about love, loss, longing, memories, and the quiet strength of healing. Written over the course of five years, it is deeply rooted in the grief of losing someone irreplaceable and the emotions that remain long after their absence.",
+    "Through poetry, April explores the beauty of childhood, the warmth of love, the pain of separation, and the courage to find happiness even in the midst of sorrow. Each chapter carries a different emotion, weaving together moments of vulnerability, hope, patience, and resilience.",
+    "More than just a book of poems, April is a reflection of the human experience—a reminder that everyone carries a story of love, loss, and healing within them. It is about learning to live with what we cannot change, finding beauty in the smallest moments, and discovering that even after the darkest winters, life finds a way to bloom again.",
+    "April is for everyone who has ever loved deeply, lost silently, and tried to find their way back to themselves."
   ],
-  themes: ["Rain", "Homesickness", "Letters", "Small towns", "Memory", "Hope"],
+  themes: ["Hope & Rebirth", "Memories", "Trauma & Healing", "Love", "Resilience", "Grief and Loss"],
   poems: [
     {
-      name: "First Rain",
+      name: "Junaki",
       lines: [
-        "The street forgets its dust,",
-        "the tea stall pulls its tarp down like an eyelid,",
-        "and every roof begins to say your name",
-        "in a language only water speaks.",
+        "Like JUNAKI scattered through the darkness,",
+        "like tiny stars that refuse to die,",
+        "your laughter kept illuminating me",
+        "from somewhere beyond the sky.",
       ],
     },
     {
-      name: "Unsent",
+      name: "October",
       lines: [
-        "I fold the letter into a boat",
-        "and let the gutter decide.",
-        "Somewhere past the market,",
-        "past the bus stand and the banyan,",
-        "it will learn what I could not say aloud.",
+        "Now October is a symphony of feelings to me,",
+        "some notes of joy, some sorrow's deep sea;",
+        "a music composed of the living and gone",
+        "of nights that grow longer and mornings that move on. ",
+        
       ],
     },
     {
-      name: "After",
+      name: "Tenderness",
       lines: [
-        "When the rain stops, listen.",
-        "The whole town is dripping,",
-        "keeping time for a song",
-        "that has just begun.",
+        "And then, ",
+        "something inside me breaks a little. ",
+        "Because I want what you had. ",
+        "Not your photographs.",
+        "Not merely your face.",
+        "Not even the sound of your voice,",
+        "though I would give years of my life to hear it again.",
+        "I want your tenderness."
       ],
     },
   ],
   praise: [
-    { quote: "Quiet, exact and warm. I read it twice in one sitting.", by: "A reader, Bhopal" },
-    { quote: "The poem 'Unsent' stayed with me all week.", by: "A reader, Pune" },
-    { quote: "A small book that feels like a long evening.", by: "A reader, Indore" },
+    { quote: "April is a deeply moving collection that touches the heart. Every poem feels personal, beautifully written, and relatable. A book that stays with you long after you finish reading.", by: "A reader, Assam" },
+    { quote: "The writing is sincere, delicate, and beautifully expressive. April captures the silent emotions that many of us struggle to put into words. ", by: "A reader, Assam" },
+    { quote: "Some books entertain you, while others make you feel something profound. April belongs to the latter. A truly touching collection.", by: "A reader, kolkata" },
   ],
   author: {
-    name: "Author Name",
-    photo: "", // e.g. "/images/author.jpg"
+    name: "Anshuman Kaushik",
+    photo: AutherImage, // e.g. "/images/author.jpg"
     bio: [
-      "Author Name grew up in a small town in Madhya Pradesh and has been writing poems since school. Their work has appeared in local magazines and open-mic evenings.",
-      "When not writing, they teach, walk long distances and collect old postcards.",
+      "Anshuman Koushik is a writer in his mid-twenties whose work explores the nuances of emotional growth, quiet resilience, and human connection. His poetry treats grief not as a terminal point, but as an inevitable thread of the human journey—one that can be transformed through patience, daily consistency, and a steadfast commitment to finding joy.",
+      "In his debut collection, April, Anshuman offers a gentle, intimate voice to anyone navigating their own quiet storms. His spare yet deeply resonant style creates an immediate connection with readers, guiding them through the bitterest seasons of loss toward quiet grace and emotional renewal.",
     ],
     links: [
       { label: "Facebook", url: "https://www.facebook.com/your-page" },
-      { label: "Instagram", url: "https://www.instagram.com/your-handle" },
+      { label: "Instagram", url: "https://www.instagram.com/anshuman__koushik" },
     ],
   },
 };
@@ -189,7 +206,32 @@ const css = `
   .pb-rain,.pb-drops i{animation:none}
   .pb-book,.pb-btn{transition:none}
 }
+
+//for footer 
+.pb-foot{padding:32px 0;text-align:center;color:var(--muted);font-size:.9rem;background:#dfe7f3}
+.pb-foot p{margin:0 0 6px}
+.pb-credit a{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--night);text-decoration:none;border-bottom:2px solid var(--gold)}
+.pb-credit a:hover{color:var(--gold-deep)}
+.pb-credit-icon{display:inline-flex}
+.pb-credit-icon svg{width:16px;height:16px}
+
+
 `;
+
+const ICONS = {
+  facebook: (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+      <path d="M13.5 22v-8.2h2.8l.5-3.4h-3.3V8.3c0-1 .4-1.7 1.8-1.7H17V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.7H7.6v3.4h2.8V22h3.1z" />
+    </svg>
+  ),
+  instagram: (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+};
 
 function Cover({ book }) {
   if (book.coverImage) {
@@ -252,8 +294,8 @@ export default function PoetryBookPage({ book = BOOK }) {
               {book.facts.map((f) => <li key={f}>{f}</li>)}
             </ul>
             <div className="pb-cta">
-              <a className="pb-btn pb-btn-gold" href={book.amazonUrl} target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
-              <a className="pb-btn pb-btn-line" href={book.facebookUrl} target="_blank" rel="noopener noreferrer">Buy on Facebook</a>
+              <a className="pb-btn pb-btn-gold" href={book.amazonUrl} target="_blank" rel="noopener noreferrer">Buy on BookLeaf</a>
+              {/* <a className="pb-btn pb-btn-line" href={book.facebookUrl} target="_blank" rel="noopener noreferrer">Buy on Facebook</a> */}
             </div>
           </div>
 
@@ -349,7 +391,7 @@ export default function PoetryBookPage({ book = BOOK }) {
             {book.author.bio.map((p, i) => <p key={i}>{p}</p>)}
             <div className="pb-links">
               {book.author.links.map((l) => (
-                <a key={l.label} href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a>
+                <a key={l.label} href={l.url} target="_blank" rel="noopener noreferrer"  className="pb-btn pb-btn-dark-line">{l.label}</a>
               ))}
             </div>
           </div>
@@ -361,13 +403,23 @@ export default function PoetryBookPage({ book = BOOK }) {
           <h2 className="pb-title">Get your copy of {book.title}</h2>
           <p className="pb-price">{book.price}</p>
           <div className="pb-cta">
-            <a className="pb-btn pb-btn-dark-line" href={book.amazonUrl} target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
-            <a className="pb-btn pb-btn-dark-line" href={book.facebookUrl} target="_blank" rel="noopener noreferrer">Buy on Facebook</a>
+            <a className="pb-btn pb-btn-gold" href={book.amazonUrl} target="_blank" rel="noopener noreferrer">Buy on BookLeaf</a>
+            {/* <a className="pb-btn pb-btn-dark-line" href={book.facebookUrl} target="_blank" rel="noopener noreferrer">Buy on Facebook</a> */}
           </div>
         </div>
       </section>
 
-      <footer className="pb-foot">© {new Date().getFullYear()} {book.author.name}. All rights reserved.</footer>
+      {/* <footer className="pb-foot">© {new Date().getFullYear()} {book.author.name}. All rights reserved.</footer> */}
+      <footer className="pb-foot">
+        <p className="pb-copy">© {new Date().getFullYear()} {book.author.name}. All rights reserved.</p>
+        <p className="pb-credit">
+          Website created and crafted by{" "}
+          <a href="https://www.instagram.com/kushh9" target="_blank" rel="noopener noreferrer">
+            <span className="pb-credit-icon">{ICONS.instagram}</span>
+            Ankush Sharma
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }

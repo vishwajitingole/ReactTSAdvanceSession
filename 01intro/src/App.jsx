@@ -11,6 +11,7 @@ import Home from "./Home";
 import AuthPage from "./LoginModule/AuthPage";
 import RegisterPage from "./LoginModule/RegisterPage";
 import MenuOptions from "./MenuOptions";
+import PoetryBookPage from "./Poetry/PoetryBookPage";
 import SplitScreen from "./Screen/SplitScreen";
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
         {/* Public Routes */}
         <Route path="/login" element={<AuthPage />}/>
         <Route path="/register" element={<RegisterPage />}/>
+        <Route path="/poetry" element={<PoetryBookPage />}/>
 
         {/* Protected Routes */}
         <Route path="/" element={<SplitScreen Left={MenuOptions}/>}>

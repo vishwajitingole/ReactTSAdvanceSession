@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AutherImage from "./Images/AutherImage.png";
+import AutherImage from "./Images/AutherImage2.jpeg";
 import FrontCoverImage from "./Images/frontCoverPage.jpeg";
 
 //images for the section a look at the book
@@ -78,14 +78,14 @@ const BOOK = {
     { quote: "Some books entertain you, while others make you feel something profound. April belongs to the latter. A truly touching collection.", by: "A reader, kolkata" },
   ],
   author: {
-    name: "Anshuman Kaushik",
+    name: "Anshuman Koushik",
     photo: AutherImage, // e.g. "/images/author.jpg"
     bio: [
       "Anshuman Koushik is a writer in his mid-twenties whose work explores the nuances of emotional growth, quiet resilience, and human connection. His poetry treats grief not as a terminal point, but as an inevitable thread of the human journey—one that can be transformed through patience, daily consistency, and a steadfast commitment to finding joy.",
       "In his debut collection, April, Anshuman offers a gentle, intimate voice to anyone navigating their own quiet storms. His spare yet deeply resonant style creates an immediate connection with readers, guiding them through the bitterest seasons of loss toward quiet grace and emotional renewal.",
     ],
     links: [
-      { label: "Facebook", url: "https://www.facebook.com/your-page" },
+      { label: "Facebook", url: "https://www.facebook.com/anshuman.koushik.3" },
       { label: "Instagram", url: "https://www.instagram.com/anshuman__koushik" },
     ],
   },
@@ -306,7 +306,7 @@ export default function PoetryBookPage({ book = BOOK }) {
               onClick={() => setFlipped((f) => !f)}
               aria-label={flipped ? "Show the front cover" : "Turn the book over to read the back cover"}
             >
-              <span className="pb-face pb-front"><Cover book={book} /></span>
+              <span className="pb-face"><Cover book={book} /></span>
               <span className="pb-face pb-back">{book.backBlurb}</span>
               <span className="pb-edge" aria-hidden="true" />
             </button>
